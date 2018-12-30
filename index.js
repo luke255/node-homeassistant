@@ -37,7 +37,7 @@ class Homeassistant extends EventEmitter {
       if (data.type == 'auth_required') {
         if (!this.config.password) throw new Error('Password required')
 
-        return this.send({type: 'auth', api_password: this.config.password}, false)
+        return this.send({type: 'auth', access_token: this.config.password}, false)
       }
 
       if (data.type == 'auth_invalid') {
